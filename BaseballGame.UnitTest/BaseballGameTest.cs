@@ -1,9 +1,8 @@
 using System.Collections.Generic;
-using BaseballGame;
 using Moq;
 using Xunit;
 
-namespace UnitTest;
+namespace BaseballGame.UnitTest;
 
 public class BaseballGameTest
 {
