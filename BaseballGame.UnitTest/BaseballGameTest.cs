@@ -20,9 +20,9 @@ public class BaseballGameTest
             .Setup(generator => generator.Generate(randomNumbers.Length))
             .Returns(randomNumbers);
 
-        var baseballGameController = new BaseballGameController(_randomNumberListGeneratorMock.Object, new InputNumberTextValidator());
+        var baseballGametroller = new Initializer(_randomNumberListGeneratorMock.Object, new InputNumberTextValidator());
 
-        var actual = baseballGameController.Check(numberText);
+        var actual = baseballGametroller.Check(numberText);
 
         Assert.Equal(expected, actual);
     }
@@ -38,9 +38,9 @@ public class BaseballGameTest
             .Setup(generator => generator.Generate(3))
             .Returns(new[] {1, 2, 3});
 
-        var baseballGameController = new BaseballGameController(_randomNumberListGeneratorMock.Object, new InputNumberTextValidator());
+        var baseballGame = new Initializer(_randomNumberListGeneratorMock.Object, new InputNumberTextValidator());
 
-        Assert.Throws<BaseballGameException>(() => baseballGameController.Check(numberText));
+        Assert.Throws<BaseballGameException>(() => baseballGame.Check(numberText));
     }
 
     public static IEnumerable<object[]> CheckCases =>

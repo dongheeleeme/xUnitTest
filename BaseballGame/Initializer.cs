@@ -1,11 +1,11 @@
 namespace BaseballGame;
 
-public class BaseballGameController
+public class Initializer
 {
     private readonly int[] _targetNumbers;
     private readonly InputNumberTextValidator _inputNumberTextValidator;
 
-    public BaseballGameController(
+    public Initializer(
         IRandomNumberListGenerator randomNumberListGenerator,
         InputNumberTextValidator inputNumberTextValidator
     )
